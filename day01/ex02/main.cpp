@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 15:54:32 by mrochet           #+#    #+#             */
-/*   Updated: 2021/11/25 19:06:27 by mrochet          ###   ########lyon.fr   */
+/*   Created: 2021/11/24 15:54:35 by mrochet           #+#    #+#             */
+/*   Updated: 2021/11/25 22:49:22 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-Zombie *newZombie( std::string name )
+int main()
 {
-	Zombie *zombie = new Zombie(name);
-	return(zombie);
+	std::string str = "HI THIS IS BRAIN";
+
+	std::string *stringPTR = &str; 
+	std::string& stringREF = str;
+
+
+	std::cout << &str << std::endl;
+	std::cout << &stringPTR << std::endl;
+	std::cout << &stringREF << std::endl;
+	std::cout << std::endl;
+	std::cout << str << std::endl;
+	std::cout << *stringPTR << std::endl;
+	std::cout << stringREF << std::endl;
+
 }

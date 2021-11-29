@@ -1,10 +1,9 @@
-NAME = Zombie
+NAME = replace
 
 CLANG		= clang++
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
-SRC = Zombie.cpp main.cpp ZombieHorde.cpp
-HEADER = Zombie.hpp
+SRC = main.cpp
 OBJ_PATH = .obj
 OBJ_NAME = $(SRC:.cpp=.o)
 OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))

@@ -6,11 +6,18 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:54:16 by mrochet           #+#    #+#             */
-/*   Updated: 2021/11/25 19:06:30 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2021/11/25 21:11:35 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie::Zombie()
+{
+	this->_name = "No_name";
+    std::cout << "<" << this->_name << "> is alive" << std::endl;
+	return;
+}
 
 Zombie::Zombie(std::string str)
 {
@@ -28,4 +35,9 @@ Zombie::~Zombie()
 void Zombie::announce(void) const
 {
 	std::cout<<"<" <<this->_name<<"> BraiiiiiiinnnzzzZ"<<std::endl;
+}
+
+void Zombie::set_name(std::string name)
+{
+	this->_name = name; 
 }

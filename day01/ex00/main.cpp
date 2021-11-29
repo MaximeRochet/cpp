@@ -6,7 +6,7 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:54:35 by mrochet           #+#    #+#             */
-/*   Updated: 2021/11/25 19:06:32 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2021/11/25 19:27:11 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 int main()
 {
-	Zombie *zombie;
-	zombie = newZombie("Rick");
-	zombie->announce();
-
+	Zombie *zombie1 = newZombie("Rick");
+	zombie1->announce();
+	delete(zombie1);
+	
 	randomChump("Carl");
 
-	delete(zombie);
+	Zombie zombie2;
+	zombie2.announce();
+	
 	return(0);
 }
