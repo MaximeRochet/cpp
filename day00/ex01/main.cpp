@@ -6,43 +6,47 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:45:34 by mrochet           #+#    #+#             */
-/*   Updated: 2021/11/24 14:45:36 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2022/06/13 15:59:10 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "annuaire.hpp"
+#include "ClassPhoneBook.hpp"
 
-void add(Phonebook *annuaire)
+void add(Phonebook *phonebook)
 {
-	if(annuaire->get_nb_contact() < 8)		
-		annuaire->add_contact();
+	if(phonebook->get_nb_contact() < 8)		
+		phonebook->add_contact();
 	else
 		std::cout<<"Memory is full"<<std::endl;
+	std::cout << "> ";	
 }
 
-void search(Phonebook *annuaire, std::string cmd)
+void search(Phonebook *phonebook, std::string cmd)
 {
-	annuaire->liste_view();
-	if(annuaire->get_nb_contact() > 0)
+	phonebook->liste_view();
+	if(phonebook->get_nb_contact() > 0)
 	std::cout<<"index du contact : ";
 	getline(std::cin, cmd);
 	if(cmd.find_first_not_of("01234567") == std::string::npos)
-		annuaire->affiche_contact(stoi(cmd));
+		phonebook->affiche_contact(stoi(cmd));
 	else
 		std::cout<<"invalid index"<<std::endl;
+	std::cout << "> ";	
 }
 
 int main()
 {
-	Phonebook annuaire;
+	Phonebook phonebook;
 	std::string cmd;
-
+	std::cout << "> ";	
 	while(getline(std::cin, cmd) && cmd.compare("EXIT"))
 	{
 		if(!cmd.compare("ADD"))
-		 	add(&annuaire);
+		 	add(&phonebook);
 		else if(!cmd.compare("SEARCH"))
-			search(&annuaire, cmd);			
+			search(&phonebook, cmd);
+		else
+			std::cout << "invalid command = ADD,  SEARCH or EXIT : ";	
 	}
 	return (0);
 }

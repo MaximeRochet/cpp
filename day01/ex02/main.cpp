@@ -6,7 +6,7 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:54:35 by mrochet           #+#    #+#             */
-/*   Updated: 2021/11/25 22:49:22 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2022/06/14 14:29:18 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ int main()
 	std::cout << &str << std::endl;
 	std::cout << &stringPTR << std::endl;
 	std::cout << &stringREF << std::endl;
+	
 	std::cout << std::endl;
+	
 	std::cout << str << std::endl;
 	std::cout << *stringPTR << std::endl;
 	std::cout << stringREF << std::endl;

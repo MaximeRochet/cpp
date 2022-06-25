@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mrochet <mrochet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:45:50 by mrochet           #+#    #+#             */
-/*   Updated: 2021/11/25 19:27:25 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2022/06/17 00:11:23 by mrochet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#pragma once
+
+// pragma once
+// const if const
+// reference if sizeof > 8
 
 #include<iostream>
 
@@ -19,17 +22,17 @@ class Zombie
 {
 	public:
 		Zombie();
-		Zombie(std::string str);
-		void announce(void) const; 
+		Zombie(const std::string& str);
+		
+		void set_name(const std::string& name);
+		const std::string& get_name(void) const;
+
+		void announce(void); 
 		~Zombie(void);
 
 	private:
 		std::string _name;
 };
 
-Zombie* newZombie(std::string name);
-void randomChump(std::string name);
-
-#endif
-
-
+Zombie* newZombie(const std::string& name);
+void randomChump(const std::string& name);

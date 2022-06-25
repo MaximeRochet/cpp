@@ -6,12 +6,12 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 23:30:44 by mrochet           #+#    #+#             */
-/*   Updated: 2021/11/26 16:50:22 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2022/06/14 14:43:14 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_H
-#define HUMANB_H
+#ifndef HUMANB_HPP
+#define HUMANB_HPP
 
 #include "Weapon.hpp"
 

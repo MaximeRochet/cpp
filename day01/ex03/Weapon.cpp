@@ -6,7 +6,7 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 22:41:56 by mrochet           #+#    #+#             */
-/*   Updated: 2021/11/26 17:19:42 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2022/06/14 14:39:45 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 Weapon::Weapon()
 {
-	this->_type = "NO_WEAPON";
+	this->setType("NO_WEAPON");
 	return;
 }
 
 Weapon::Weapon(std::string type)
 {
-	this->_type = type;
+	this->setType(type);
 	return;
 }
 
