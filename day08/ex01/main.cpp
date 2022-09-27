@@ -5,26 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 08:47:24 by mrochet           #+#    #+#             */
-/*   Updated: 2022/06/27 11:35:17 by mrochet          ###   ########lyon.fr   */
+/*   Created: 2022/07/01 18:16:42 by mrochet           #+#    #+#             */
+/*   Updated: 2022/07/01 19:06:38 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+#include "span.hpp"
 
-#include "bureaucrat.hpp"
-
-int main()
+int main(void)
 {
 	try
 	{
-		Bureaucrat bob("bob", 10);
-		std::cout << bob;
-		++bob;
-		std::cout << bob;
-		Bureaucrat fake("bob", 0);
+		Span a(5);
+
+		a.addNumber(4);
+		a.addNumber(25);
+		a.addNumber(2);
+		a.addNumber(19);
+		a.addNumber(-5);
+		//a.addNumber(-5);
+
+		std::cout << a.shortestSpan() << std::endl;
+		std::cout << a.longestSpan() << std::endl;
 	}
-	catch(std::exception &e)
+	catch (const std::exception& e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
-	return(0);
+	return 0;
 }

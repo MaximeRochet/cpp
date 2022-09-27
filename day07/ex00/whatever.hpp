@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 08:47:24 by mrochet           #+#    #+#             */
-/*   Updated: 2022/06/27 11:35:17 by mrochet          ###   ########lyon.fr   */
+/*   Created: 2022/07/01 01:40:23 by mrochet           #+#    #+#             */
+/*   Updated: 2022/07/01 01:49:10 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bureaucrat.hpp"
+#pragma once
 
-int main()
+template <typename T>
+void swap(T &a, T &b)
 {
-	try
-	{
-		Bureaucrat bob("bob", 10);
-		std::cout << bob;
-		++bob;
-		std::cout << bob;
-		Bureaucrat fake("bob", 0);
-	}
-	catch(std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	return(0);
+	T tmp = a;
+	a = b;
+	b = tmp;
+
+}
+
+template <typename T>
+T max(T &a, T &b)
+{
+	return (a < b ? b : a);
+	
+}
+
+template <typename T>
+T min(T &a, T &b)
+{
+	return (a > b ? b : a);
 }

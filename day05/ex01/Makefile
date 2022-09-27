@@ -3,8 +3,8 @@ NAME = bureau
 CLANG		= c++
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp 
-HEADER = 
+SRC = main.cpp bureaucrat.cpp form.cpp
+HEADER = bureaucrat.hpp form.hpp
 OBJ_PATH = .obj
 OBJ_NAME = $(SRC:.cpp=.o)
 OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))

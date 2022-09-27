@@ -6,14 +6,17 @@
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 06:00:29 by mrochet           #+#    #+#             */
-/*   Updated: 2022/06/27 10:02:53 by mrochet          ###   ########lyon.fr   */
+/*   Updated: 2022/06/28 12:22:21 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include <string>
 #include <iostream>
+#include "form.hpp"
 
-#pragma once
+class Form;
 
 class Bureaucrat
 {
@@ -43,6 +46,9 @@ class Bureaucrat
 		int getGrade() const;
 
 		void setGrade(int);
+		
+		void executeForm(Form const &);		
+		void signForm(Form &);
 
 		Bureaucrat &operator++();
 		Bureaucrat &operator--();

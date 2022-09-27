@@ -5,26 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 08:47:24 by mrochet           #+#    #+#             */
-/*   Updated: 2022/06/27 11:35:17 by mrochet          ###   ########lyon.fr   */
+/*   Created: 2022/06/27 18:26:17 by mrochet           #+#    #+#             */
+/*   Updated: 2022/06/28 15:36:34 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "intern.hpp"
 #include "bureaucrat.hpp"
 
-int main()
+int main(void)
 {
+	Intern intern;
+	
 	try
 	{
-		Bureaucrat bob("bob", 10);
-		std::cout << bob;
-		++bob;
-		std::cout << bob;
-		Bureaucrat fake("bob", 0);
+		Form *form1 = intern.makeForm("presidential", "1");
+		Form *form2 = intern.makeForm("robot", "2");
+	
+	 	std::cout << *form1 << std::endl;
+		std::cout << *form2 << std::endl;
+
+		Bureaucrat Bob("Bob", 1);
+		Bob.signForm(*form1);
+		Bob.executeForm(*form1);
+		Bob.signForm(*form2);
+		Bob.executeForm(*form2);
+		delete form1;
+		delete form2;
 	}
-	catch(std::exception &e)
+	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	return(0);
+	return 0;
 }

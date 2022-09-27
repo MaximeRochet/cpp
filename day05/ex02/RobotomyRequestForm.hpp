@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrochet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 08:47:24 by mrochet           #+#    #+#             */
-/*   Updated: 2022/06/27 11:35:17 by mrochet          ###   ########lyon.fr   */
+/*   Created: 2022/06/27 18:10:02 by mrochet           #+#    #+#             */
+/*   Updated: 2022/06/28 12:18:17 by mrochet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bureaucrat.hpp"
+#pragma once
 
-int main()
+#include "form.hpp"
+
+class RobotomyRequestForm: public Form
 {
-	try
-	{
-		Bureaucrat bob("bob", 10);
-		std::cout << bob;
-		++bob;
-		std::cout << bob;
-		Bureaucrat fake("bob", 0);
-	}
-	catch(std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	return(0);
-}
+	public :
+
+		virtual void executeForm(Bureaucrat const &b) const;
+
+		RobotomyRequestForm(std::string const target);
+		RobotomyRequestForm(RobotomyRequestForm const &copy);
+		RobotomyRequestForm();
+		virtual ~RobotomyRequestForm();
+};

@@ -1,10 +1,11 @@
-NAME = bureau 
+NAME = template
 
 CLANG		= c++
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp bureaucrat.cpp
-HEADER = bureaucrat.hpp
+SRC = main.cpp
+HEADER = iter.hpp
+
 OBJ_PATH = .obj
 OBJ_NAME = $(SRC:.cpp=.o)
 OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))

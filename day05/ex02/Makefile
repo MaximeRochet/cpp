@@ -3,8 +3,14 @@ NAME = bureau
 CLANG		= c++
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp 
-HEADER = 
+SRC = PresidentialPardonForm.cpp RobotomyRequestForm.cpp \
+	  ShrubberyCreationForm.cpp bureaucrat.cpp \
+	  form.cpp main.cpp
+
+HEADER = PresidentialPardonForm.hpp RobotomyRequestForm.hpp \
+		 ShrubberyCreationForm.hpp bureaucrat.hpp \
+		 form.hpp
+
 OBJ_PATH = .obj
 OBJ_NAME = $(SRC:.cpp=.o)
 OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))
@@ -27,5 +33,6 @@ clean:
 
 fclean: clean
 	@rm  $(NAME)
+	@rm  *_shrubbery
 
 re: fclean all
